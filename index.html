@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регина Шошина | Кандидат биологических наук, Эколог, Тьютор</title>
+    <meta name="description" content="Профессиональная помощь с научными проектами, экологией, подготовкой к конференциям и олимпиадам. Кандидат биологических наук, доцент.">
+    <style>
+        :root {
+            --primary: #10b981; /* Изумрудный */
+            --primary-dark: #059669;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; /* Плавная прокрутка для якорных ссылок */ }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        
+        /* Header */
+        header { background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a:hover { color: var(--primary); }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%); padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; color: var(--text); }
+        .hero .subtitle { font-size: 1.2rem; color: var(--text-light); max-width: 700px; margin: 0 auto 30px; }
+        .hero .badges { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .badge { background: #d1fae5; color: var(--primary-dark); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 30px; border-radius: 8px; font-weight: 600; font-size: 1.1rem; }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+        /* Sections */
+        section { padding: 80px 0; }
+        section:nth-child(even) { background: var(--bg-alt); }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 15px auto 0; border-radius: 2px; }
+
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .about-text p { margin-bottom: 15px; }
+        .about-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .about-list li::before { content: '✓'; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
+
+        /* Services */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: var(--bg); padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); transition: 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        .service-card h3 { margin-bottom: 15px; font-size: 1.2rem; }
+        .price { font-size: 1.3rem; font-weight: 700; color: var(--primary-dark); margin-top: 15px; display: block; }
+
+        /* Experience */
+        .timeline { max-width: 800px; margin: 0 auto; }
+        .timeline-item { padding: 20px 0; border-left: 3px solid var(--primary); padding-left: 30px; position: relative; }
+        .timeline-item::before { content: ''; width: 15px; height: 15px; background: var(--primary); border-radius: 50%; position: absolute; left: -9px; top: 25px; }
+        .timeline-item h3 { font-size: 1.1rem; margin-bottom: 5px; }
+        .timeline-item .year { color: var(--text-light); font-size: 0.9rem; margin-bottom: 10px; display: block; }
+
+        /* Reviews */
+        .review-card { background: var(--bg); padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto; text-align: center; }
+        .review-text { font-style: italic; font-size: 1.1rem; margin-bottom: 20px; color: var(--text); }
+        .review-author { font-weight: 700; color: var(--primary-dark); }
+        .stars { color: #fbbf24; margin-bottom: 15px; font-size: 1.2rem; }
+
+        /* Contact */
+        .contact { text-align: center; }
+        .contact p { margin-bottom: 30px; font-size: 1.1rem; color: var(--text-light); }
+        
+        /* Footer */
+        footer { background: var(--text); color: white; text-align: center; padding: 30px 0; font-size: 0.9rem; }
+
+        /* =========================================
+           КНОПКА "НАВЕРХ" (SCROLL TO TOP)
+           ========================================= */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        #scrollTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        #scrollTopBtn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Адаптация для мобильных устройств (iOS/Android) */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } 
+            .hero h1 { font-size: 2rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            
+            /* Делаем кнопку чуть меньше и ближе к краю на мобильных, чтобы не перекрывать контент */
+            #scrollTopBtn {
+                bottom: 20px;
+                right: 20px;
+                width: 44px; /* Минимальный рекомендуемый размер для тач-интерфейсов Apple/Google */
+                height: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Регина Шошина</div>
+                <ul class="nav-links">
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#experience">Опыт</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badges">
+                <span class="badge">Кандидат биологических наук</span>
+                <span class="badge">Доцент</span>
+                <span class="badge">Работаю дистанционно</span>
+            </div>
+            <h1>Научное руководство и обучение экологии</h1>
+            <p class="subtitle">Помогаю школьникам, студентам и профессионалам с проектами, сложными задачами, подготовкой к конференциям (ВСОШ, Сириус) и защитой дипломных работ.</p>
+            <a href="#contact" class="btn">Обсудить задачу</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Я тьютор и действующий преподаватель университетов с глубоким практическим опытом в природоохранной деятельности. Моя цель — не просто дать теоретические знания, а научить правильно оформлять и представлять результаты исследований.</p>
+                    <p>Знаю все особенности и нюансы оформления научных работ: от школьных конференций до представления проектов на высоком уровне. Имею большой опыт подготовки и выступления с докладами, а также написания научных трудов и книг.</p>
+                </div>
+                <ul class="about-list">
+                    <li>Кандидат биологических наук по специализации «Радиоэкология»</li>
+                    <li>Преподаю дисциплины: Экология (рус/англ), БЖД, Экологическое нормирование и экспертиза, Nuclear power engineering and the environment</li>
+                    <li>Эколог-практик, старший научный сотрудник природоохранной организации</li>
+                    <li>Руководитель государственных контрактов по мониторингу водных объектов</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Услуги и стоимость</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🎓 Обучение экологии</h3>
+                    <p>Разбор сложных тем, подготовка к экзаменам и углубленное изучение дисциплины для школьников и студентов.</p>
+                    <span class="price">1 500 – 3 000 ₽ / 60 мин</span>
+                </div>
+                <div class="service-card">
+                    <h3>🔬 Проектная деятельность</h3>
+                    <p>Курирование и помощь в написании исследовательских работ и проектов по экологии и биологии.</p>
+                    <span class="price">1 500 – 3 000 ₽ / 60 мин</span>
+                </div>
+                <div class="service-card">
+                    <h3>🏆 Олимпиады и конференции</h3>
+                    <p>Подготовка к выступлениям, защита проектов, помощь с оформлением для ВСОШ, «Сириус» и вузовских конференций.</p>
+                    <span class="price">1 500 – 3 000 ₽ / 60 мин</span>
+                </div>
+                <div class="service-card">
+                    <h3>📈 Повышение квалификации</h3>
+                    <p>Консультации для профессионалов в рамках повышения квалификации, разбор практических кейсов промышленной экобезопасности.</p>
+                    <span class="price">1 500 – 3 000 ₽ / 60 мин</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Опыт и образование</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>НИЯУ МИФИ ИАТЭ / КГУ им. К.Э. Циолковского</h3>
+                    <span class="year">с 2022 г. (4 года)</span>
+                    <p>Действующий преподаватель университетов, доцент.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>ООО фирма "Экоаналитика"</h3>
+                    <span class="year">с 2018 г. (8 лет)</span>
+                    <p>Эколог-практик, старший научный сотрудник. Промышленная экологическая безопасность.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>ВНИИРАЭ</h3>
+                    <span class="year">2018 г.</span>
+                    <p>Присвоена учёная степень «кандидат биологических наук».</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Управление Росприроднадзора по Калужской области</h3>
+                    <span class="year">2017 – 2018 гг.</span>
+                    <p>Государственный экологический надзор.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>НИЯУ МИФИ</h3>
+                    <span class="year">2007 – 2012 гг.</span>
+                    <p>Квалификация «эколог», специальность «экология».</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы</h2>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">«Хочу выразить огромную благодарность Регине Ринатовне! Она курировала написание моей магистерской диссертации. В очень сжатые сроки Регина Ринатовна смогла сформировать план решения поставленного вопроса и разложить по полочкам сложные теоретические и практические аспекты работы. Благодаря её профессионализму, глубоким знаниям и чуткому руководству, мне удалось не просто вовремя завершить работу, но и защитить ее на "отлично".»</p>
+                <p class="review-author">Катя, студентка магистратуры</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Связаться со мной</h2>
+            <p>Работаю дистанционно со школьниками, студентами и специалистами по всей России.<br>Напишите мне, чтобы обсудить вашу задачу и записаться на консультацию.</p>
+            <a href="https://profi.ru/profile/ShoshinaRR/share" target="_blank" class="btn">Написать на Profi.ru</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Регина Ринатовна Шошина. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- =========================================
+         КНОПКА "НАВЕРХ" (HTML)
+         ========================================= -->
+    <button id="scrollTopBtn" title="Вернуться наверх" aria-label="Вернуться наверх">
+        <!-- SVG иконка стрелки вверх -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- =========================================
+         СКРИПТ ДЛЯ РАБОТЫ КНОПКИ (JS)
+         ========================================= -->
+    <script>
+        // Получаем элемент кнопки
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        // Отслеживаем прокрутку страницы
+        window.addEventListener("scroll", () => {
+            // Если прокрутили больше 300 пикселей, показываем кнопку
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                // Иначе скрываем
+                scrollTopBtn.classList.remove("show");
+            }
+        });
+
+        // Обработка клика по кнопке
+        scrollTopBtn.addEventListener("click", () => {
+            // Плавная прокрутка наверх (работает во всех современных браузерах, включая iOS Safari 15.4+ и Android Chrome)
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+
+</body>
+</html>
