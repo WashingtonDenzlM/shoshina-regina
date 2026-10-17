@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визитка | Шошина Регина Ринатовна</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 380px;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #10b981, #059669);
+        }
+        .emblem {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #ecfdf5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #059669;
+        }
+        .emblem svg {
+            width: 40px;
+            height: 40px;
+        }
+        h1 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin: 0 0 8px;
+            font-weight: 700;
+        }
+        .title {
+            font-size: 0.95rem;
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .description {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .contact-link:hover {
+            background: #10b981;
+            color: white;
+            border-color: #10b981;
+            transform: translateY(-2px);
+        }
+        .contact-link svg {
+            width: 20px;
+            height: 20px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Эмблема: Лист + Атом (символ радиоэкологии) -->
+        <div class="emblem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12h20"/>
+                <path d="M12 2a10 10 0 0 1 10 10"/>
+                <path d="M12 22a10 10 0 0 1-10-10"/>
+                <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/>
+                <path d="M12 2v4"/>
+                <path d="M12 18v4"/>
+            </svg>
+        </div>
+
+        <h1>Шошина Регина Ринатовна</h1>
+        <div class="title">К.б.н. | Доцент | Эколог-практик</div>
+        
+        <p class="description">
+            Научное руководство, экология, подготовка к конференциям (ВСОШ, Сириус) и защита дипломных работ.
+        </p>
+
+        <div class="contacts">
+            <a href="https://profi.ru/profile/ShoshinaRR/share" target="_blank" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                Профиль на Profi.ru
+            </a>
+            <a href="mailto:rerish@inbox.ru" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Написать на Email
+            </a>
+            <a href="https://t.me/shoshina_eco" target="_blank" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Telegram
+            </a>
+        </div>
+
+        <div class="footer">
+            Работаю дистанционно по всей России
+        </div>
+    </div>
+
+</body>
+</html>
