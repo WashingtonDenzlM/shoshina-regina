@@ -127,6 +127,56 @@
             }
         }
     </style>
+<!-- Стили для кнопки визитки -->
+<style>
+    .vcard-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .vcard-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    }
+
+    .vcard-btn svg {
+        width: 22px;
+        height: 22px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+.buttons-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Убираем margin-top у отдельных кнопок, так как он теперь у контейнера */
+.vcard-btn {
+    margin-top: 0 !important;
+}
+</style>
 </head>
 <body>
 
@@ -154,6 +204,7 @@
             </div>
             <h1>Научное руководство и обучение экологии</h1>
             <p class="subtitle">Помогаю школьникам, студентам и профессионалам с проектами, сложными задачами, подготовкой к конференциям (ВСОШ, Сириус) и защитой дипломных работ.</p>
+
             <a href="#contact" class="btn">Обсудить задачу</a>
         </div>
     </section>
@@ -252,12 +303,18 @@
         <div class="container">
             <h2 class="section-title">Связаться со мной</h2>
             <p>Работаю дистанционно со школьниками, студентами и специалистами по всей России.<br>Напишите мне, чтобы обсудить вашу задачу и записаться на консультацию.</p>
-            <a href="https://profi.ru/profile/ShoshinaRR/share" target="_blank" class="btn">Написать на Profi.ru</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
+            <div class="buttons-container">
+    <a href="https://profi.ru/profile/ShoshinaRR/share" target="_blank" class="btn">
+        Написать на Profi.ru
+    </a>
+    <a href="vcard.html" class="vcard-btn">
+        <svg viewBox="0 0 24 24">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <line x1="2" y1="10" x2="22" y2="10" />
+        </svg>
+        <span>Открыть электронную визитку</span>
+    </a>
+</div>
             <p>© 2026 Регина Ринатовна Шошина. Все права защищены.</p>
         </div>
     </footer>
